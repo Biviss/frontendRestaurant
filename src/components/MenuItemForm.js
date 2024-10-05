@@ -21,7 +21,7 @@ const MenuItemForm = ({ onCreate, restaurantId }) => {
             setPrice('');
         } catch (error) {
             console.error('Error creating menu item:', error.response.data);
-            alert('Error add menu: ' + error.response.data.detail || 'Any error');
+            alert('Error adding menu item: ' + error.response.data.detail || 'Any error');
         }
     };
 

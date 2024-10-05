@@ -30,3 +30,22 @@ export const fetchMenuItems = async (restaurantId) => {
     const response = await axios.get(`${API_URL}/restaurants/${restaurantId}/menu/`);
     return response.data;
 };
+
+export const updateMenuItem = async (menuItemId, menuItemData) => {
+    try {
+        const response = await axios.put(`${API_URL}/restaurants/menu/${menuItemId}`, menuItemData);
+        return response.data;
+    } catch (error) {
+        console.error('Error updating menu item:', error);
+        throw error;
+    }
+};
+
+export const deleteMenuItem = async (menuItemId) => {
+    try {
+        await axios.delete(`${API_URL}/restaurants/menu/${menuItemId}`);
+    } catch (error) {
+        console.error('Error deleting menu item:', error);
+        throw error;
+    }
+};
